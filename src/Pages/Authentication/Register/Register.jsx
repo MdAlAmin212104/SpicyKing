@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const Register = () => {
-      const { singUpWithEmailPassword } = useContext(AuthContext)
+      const { singUpWithEmailPassword, updateUserProfile } = useContext(AuthContext)
       const handleRegister = e => {
             e.preventDefault();
             const form = e.target;
@@ -14,7 +14,11 @@ const Register = () => {
             console.log(name, email, password, photo);
             singUpWithEmailPassword(email, password)
                   .then(res => {
-                        console.log(res.user);
+                        updateUserProfile(name, photo)
+                              .then(res => {
+                                    console.log('user profile update', res.data);
+                              })
+                              .catch(err => console.error(err));
                   })
                   .catch(err => console.error(err));
       }

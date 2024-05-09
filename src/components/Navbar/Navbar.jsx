@@ -15,8 +15,8 @@ const Navbar = () => {
 
       const handleLogOut = () => {
             logOut()
-                  .then(res => console.log(res.user))
-                  .catch(err => console.log(err));
+                  .then(res => console.log(res.data))
+                  .catch(err => console.log(err.message));
       }
       return (
             <div className="navbar bg-base-100">

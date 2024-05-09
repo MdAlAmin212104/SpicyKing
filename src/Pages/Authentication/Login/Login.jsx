@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaFacebook } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const Login = () => {
+      const { singInWithEmailPassword } = useContext(AuthContext)
 
       const handleLogin = e => {
             e.preventDefault();
             const form = e.target;
             const email = form.email.value;
             const password = form.password.value;
-            console.log(email, password);
+            singInWithEmailPassword(email, password)
+                  .then(res => {
+                        console.log(res.data);
+                  })
+                  .catch(err => console.error(err));
       }
       return (
             <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800 mx-auto mt-8">
