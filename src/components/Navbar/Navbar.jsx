@@ -48,8 +48,18 @@ const Navbar = () => {
                                                       </div>
                                                 </div>
                                                 <ul className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52 invisible opacity-0 transition-opacity duration-200 group-hover:visible group-hover:opacity-100">
-                                                      <li><a>{user?.displayName || 'Name not found'}</a></li>
-                                                      <li><a>Logout</a></li>
+                                                      
+                                                      <li>
+                                                            <Link to='/added-food'>
+                                                                  My added food
+                                                            </Link>
+                                                      </li>
+                                                      <li>
+                                                            <Link to='/add-food'>Add a food</Link>
+                                                      </li>
+                                                      <li>
+                                                            <Link to='/order-food'>My ordered food</Link>
+                                                      </li>
                                                 </ul>
                                           </div>
                               </> :<button className='btn btn-primary text-xl'><Link to='/login'>Login</Link></button>

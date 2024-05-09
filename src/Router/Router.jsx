@@ -1,10 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../layout/Root";
 import Home from "../Pages/Home/Home";
-import AllFoods from "../Pages/Home/AllFoods/AllFoods";
 import Gallery from "../Pages/Gallery/Gallery";
 import Login from "../Pages/Authentication/Login/Login";
 import Register from "../Pages/Authentication/Register/Register";
+import AllFoods from "../Pages/AllFoods/AllFoods";
+import AddedFood from "../Pages/Profile/AddedFood/AddedFood";
+import AddFood from "../Pages/Profile/AddFood/AddFood";
+import OrderFood from "../Pages/Profile/OrderFood/OrderFood";
 
 const router = createBrowserRouter([
       {
@@ -22,6 +25,18 @@ const router = createBrowserRouter([
                   {
                         path: '/gallery',
                         element: <Gallery/>
+                  },
+                  {
+                        path: '/added-food',
+                        element: <AddedFood/>
+                  },
+                  {
+                        path: '/add-food',
+                        element: <AddFood/>
+                  },
+                  {     
+                        path: '/order-food',
+                        element: <OrderFood/>
                   },
                   {
                         path: '/login',

@@ -1,9 +1,10 @@
 import React from 'react';
+import Banner from '../AllFoods/Banner/Banner';
 
 const Gallery = () => {
       return (
             <div>
-                  this is a gallery section
+                  <Banner/>
             </div>
       );
 };
