@@ -15,7 +15,7 @@ const Hero = () => {
                         <div>
                               <h1 className='text-2xl md:text-8xl font-bold bg-[#ffff0080] p-4 rounded-3xl text-black'>Spicy King Restaurant</h1>
                               <p className='md:text-4xl bg-[#008000] font-bold text-white lg:w-[500px] mx-auto rounded-xl mt-5 p-4'>20% discounts for take away</p>
-                              <Link to='foods' class="btn bg-[teal] mt-4 text-white text-xl">Order Now</Link>
+                              <Link to='foods' className="btn bg-[teal] mt-4 text-white text-xl">Order Now</Link>
                         </div>
                         </div>
                         </div>
@@ -31,7 +31,7 @@ const Hero = () => {
                         <div>
                               <h1 className='text-2xl md:text-8xl font-bold bg-[#ffff0080] p-4 rounded-3xl text-black'>Spicy King Restaurant</h1>
                               <p className='md:text-4xl bg-[#008000] font-bold text-white lg:w-[500px] mx-auto rounded-xl mt-5 p-4'>20% discounts for take away</p>
-                              <Link to='foods' class="btn bg-[teal] mt-4 text-white text-xl">Order Now</Link>
+                              <Link to='foods' className="btn bg-[teal] mt-4 text-white text-xl">Order Now</Link>
                         </div>
                         </div>
                         </div>
@@ -47,7 +47,7 @@ const Hero = () => {
                         <div>
                               <h1 className='text-2xl md:text-8xl font-bold bg-[#ffff0080] p-4 rounded-3xl text-black'>Spicy King Restaurant</h1>
                               <p className='md:text-4xl bg-[#008000] font-bold text-white lg:w-[500px] mx-auto rounded-xl mt-5 p-4'>20% discounts for take away</p>
-                              <Link to='foods' class="btn bg-[teal] mt-4 text-white text-xl">Order Now</Link>
+                              <Link to='foods' className="btn bg-[teal] mt-4 text-white text-xl">Order Now</Link>
                         </div>
                         </div>
                         </div>
@@ -63,7 +63,7 @@ const Hero = () => {
                         <div>
                               <h1 className='text-2xl md:text-8xl font-bold bg-[#ffff0080] p-4 rounded-3xl text-black'>Spicy King Restaurant</h1>
                               <p className='md:text-4xl bg-[#008000] font-bold text-white lg:w-[500px] mx-auto rounded-xl mt-5 p-4'>20% discounts for take away</p>
-                              <Link to='foods' class="btn bg-[teal] mt-4 text-white text-xl">Order Now</Link>
+                              <Link to='foods' className="btn bg-[teal] mt-4 text-white text-xl">Order Now</Link>
                         </div>
                         </div>
                         </div>

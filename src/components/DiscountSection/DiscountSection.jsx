@@ -9,21 +9,21 @@ const DiscountSection = () => {
                         <figure><img src={voucher} alt="Movie"/></figure>
                         <div className="card-body">
                               <h2 className="card-title">Discount Voucher</h2>
-                              <p>Click the button to watch on Jetflix app.</p>
+                              <p>Unlock exclusive savings with our discount voucher! </p>
                         </div>
                   </div>
                   <div className="card card-side bg-base-100 shadow-xl pl-4">
                         <figure><img src={fresh} alt="Movie"/></figure>
                         <div className="card-body">
                               <h2 className="card-title">Fresh Healthy Food</h2>
-                              <p>Click the button to watch on Jetflix app.</p>
+                              <p>Discover the deliciousness of fresh, healthy food delivered straight to your door!</p>
                         </div>
                   </div>
                   <div className="card card-side bg-base-100 shadow-xl pl-4">
                         <figure><img src={delivery} alt="Movie"/></figure>
                         <div className="card-body">
                               <h2 className="card-title">Fast Home Delivery</h2>
-                              <p>Click the button to watch on Jetflix app.</p>
+                              <p>Experience the convenience of fast home delivery with our reliable service!</p>
                         </div>
                   </div>
             </div>
