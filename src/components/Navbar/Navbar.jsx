@@ -3,14 +3,21 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Navbar = () => {
-      const {name} = useContext(AuthContext)
-      console.log(name);
+      const {user, logOut} = useContext(AuthContext)
+      console.log(user);
 
       const links = <>
             <li><NavLink to='/'>Home</NavLink></li>
             <li><NavLink to='/foods'>All Foods</NavLink></li>
             <li><NavLink to='/gallery'>Gallery</NavLink></li>
       </>
+
+
+      const handleLogOut = () => {
+            logOut()
+                  .then(res => console.log(res.user))
+                  .catch(err => console.log(err));
+      }
       return (
             <div className="navbar bg-base-100">
                   <div className="navbar-start">
@@ -30,7 +37,24 @@ const Navbar = () => {
                         </ul>
                   </div>
                   <div className="navbar-end">
-                        <button className='btn btn-primary text-xl'><Link to='/login'>Login</Link></button>
+                        {
+                              user ? <>
+                                    <button onClick={handleLogOut} className='btn btn-primary'>Logout</button>
+                                          <span className='mr-4'></span>
+                                          <div className="dropdown dropdown-end group">
+                                                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar focus:outline-none">
+                                                      <div className="w-10 rounded-full">
+                                                            <img className='' alt="Tailwind CSS Navbar component" src={ user?.photoURL || "https://lh3.googleusercontent.com/a/ACg8ocKfSrgZFBvoQ6s12ZB8gHSg3E625KGpnaiYthDiKIfNqh1g62wg=s96-c"} />
+                                                      </div>
+                                                </div>
+                                                <ul className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52 invisible opacity-0 transition-opacity duration-200 group-hover:visible group-hover:opacity-100">
+                                                      <li><a>{user?.displayName || 'Name not found'}</a></li>
+                                                      <li><a>Logout</a></li>
+                                                </ul>
+                                          </div>
+                              </> :<button className='btn btn-primary text-xl'><Link to='/login'>Login</Link></button>
+                                    
+                        }
                   </div>
             </div>
       );
