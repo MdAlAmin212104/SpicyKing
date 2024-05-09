@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
       const { singUpWithEmailPassword, updateUserProfile } = useContext(AuthContext)
@@ -27,7 +28,11 @@ const Register = () => {
 
 
       return (
-            <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800 mx-auto mt-8">
+            <div>
+                  <Helmet>
+                        <title>Spicy King || Register</title>
+                  </Helmet>
+                  <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800 mx-auto mt-8">
                   <h1 className="text-2xl font-bold text-center">Register</h1>
                   <form onSubmit={handleRegister} className="space-y-6">
                         <div className="space-y-1 text-sm">
@@ -54,6 +59,7 @@ const Register = () => {
                   <p className="text-xl text-center sm:px-6 text-gray-600">have an account?
                         <Link to='/login' rel="noopener noreferrer" className="underline text-gray-800">Log in</Link>
                   </p>
+                  </div>
             </div>
       );
 };

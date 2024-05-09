@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { FaFacebook } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
       const { singInWithEmailPassword, googleLogin, facebookLogin, githubLogin, } = useContext(AuthContext)
@@ -45,7 +46,11 @@ const Login = () => {
 
 
       return (
-            <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800 mx-auto mt-8">
+            <div>
+                  <Helmet>
+                        <title>Spicy King || Login</title>
+                  </Helmet>
+                  <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800 mx-auto mt-8">
                   <h1 className="text-2xl font-bold text-center">Login</h1>
                   <form onSubmit={handleLogin} className="space-y-6">
                         <div className="space-y-1 text-sm">
@@ -84,6 +89,7 @@ const Login = () => {
                   <p className="text-xl text-center sm:px-6 text-gray-600">Don't have an account?
                         <Link to='/register' rel="noopener noreferrer" className="underline text-gray-800">Sign up</Link>
                   </p>
+                  </div>
             </div>
       );
 };
