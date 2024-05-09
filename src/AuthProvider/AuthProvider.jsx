@@ -1,6 +1,17 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth';
+import {
+      FacebookAuthProvider,
+      GithubAuthProvider,
+      GoogleAuthProvider,
+      createUserWithEmailAndPassword,
+      onAuthStateChanged,
+      signInWithEmailAndPassword,
+      signInWithPopup,
+      signOut,
+      updateProfile
+} from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
 import auth from '../firebase/Firebase_config';
+
 
 
 export const AuthContext = createContext(null)
@@ -9,6 +20,10 @@ const AuthProvider = ({ children }) => {
       const [user, setUser] = useState(null)
       const [loading, setLoading] = useState(true)
 
+
+      const googleProvider = new GoogleAuthProvider();
+      const facebookProvider = new FacebookAuthProvider();
+      const githubProvider = new GithubAuthProvider();
 
       const singUpWithEmailPassword = (email, password) => {
             setLoading(true)
@@ -28,6 +43,18 @@ const AuthProvider = ({ children }) => {
             return signInWithEmailAndPassword(auth, email, password)
       }
 
+      const googleLogin = () => {
+            setLoading(true)
+            return signInWithPopup(auth, googleProvider)
+      }
+      const facebookLogin = () => {
+            setLoading(true);
+            return signInWithPopup(auth, facebookProvider)
+      }
+      const githubLogin = () => {
+            setLoading(true);
+            return signInWithPopup(auth, githubProvider)
+      }
       
 
       const logOut = () => {
@@ -54,6 +81,9 @@ const AuthProvider = ({ children }) => {
             singUpWithEmailPassword,
             singInWithEmailPassword,
             updateUserProfile,
+            googleLogin,
+            facebookLogin,
+            githubLogin,
             logOut
       }
       return (
