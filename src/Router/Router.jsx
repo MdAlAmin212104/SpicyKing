@@ -9,6 +9,7 @@ import AddedFood from "../Pages/Profile/AddedFood/AddedFood";
 import AddFood from "../Pages/Profile/AddFood/AddFood";
 import OrderFood from "../Pages/Profile/OrderFood/OrderFood";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import DetailsCard from "../components/DetailsCard/DetailsCard";
 
 const router = createBrowserRouter([
       {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
                   {     
                         path: '/order-food',
                         element: <OrderFood/>
+                  },
+                  {
+                        path: '/food/:id',
+                        element: <DetailsCard/>
                   },
                   {
                         path: '/login',
