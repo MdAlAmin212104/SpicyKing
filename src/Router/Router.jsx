@@ -10,6 +10,8 @@ import AddFood from "../Pages/Profile/AddFood/AddFood";
 import OrderFood from "../Pages/Profile/OrderFood/OrderFood";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import DetailsCard from "../components/DetailsCard/DetailsCard";
+import axios from "axios";
+import Purchase from "../components/Purchase/Purchase";
 
 const router = createBrowserRouter([
       {
@@ -43,7 +45,13 @@ const router = createBrowserRouter([
                   },
                   {
                         path: '/food/:id',
-                        element: <DetailsCard/>
+                        element: <DetailsCard />,
+                        loader: ({ params }) => fetch(`${import.meta.env.VITE_URL}/food/${params.id}`)
+                  },
+                  {
+                        path: '/purchase/:id',
+                        element: <Purchase />,
+                        loader: ({ params }) => fetch(`${import.meta.env.VITE_URL}/purchase/${params.id}`)
                   },
                   {
                         path: '/login',

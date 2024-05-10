@@ -15,7 +15,7 @@ const HomeSingleCard = ({ card }) => {
                                     <p>Price : ${ price }</p>
                               </div>
                         </div>
-                        <Link to='/food/:id'>
+                        <Link to={`/food/${_id}`} >
                               <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50 ">Read more</button>
                         </Link>
                   </div>
