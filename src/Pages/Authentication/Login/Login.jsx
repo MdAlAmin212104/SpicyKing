@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { FaFacebook } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
@@ -6,19 +6,21 @@ import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
 
 const Login = () => {
-      const { singInWithEmailPassword, googleLogin, facebookLogin, githubLogin, } = useContext(AuthContext)
+      const { user, singInWithEmailPassword, googleLogin, facebookLogin, githubLogin, } = useContext(AuthContext)
       const location = useLocation()
       const navigate = useNavigate()
+      const from = location.state?.from?.pathname || "/";
 
       const handleLogin = e => {
             e.preventDefault();
             const form = e.target;
             const email = form.email.value;
             const password = form.password.value;
+            
             singInWithEmailPassword(email, password)
                   .then(res => {
                         Swal.fire("User singIn success!");
-                        navigate(location.state || "/");
+                        navigate(location?.state ? location.state : "/");
                   })
                   .catch(err => {
                         Swal.fire({
@@ -27,8 +29,9 @@ const Login = () => {
                               icon: "question"
 
                         });
-                        navigate( location.state || "/")
+                        
                   });
+            
       }
 
       const handleGoogleLogin = () => {
@@ -56,7 +59,11 @@ const Login = () => {
                   
       }
 
-
+      useEffect(() => {
+            if (user) {
+                  navigate(location?.state ? location.state : "/");
+            }
+      }, [from, navigate, user]);
 
       return (
             <div>

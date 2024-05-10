@@ -25,6 +25,7 @@ const AddFood = () => {
 
             axios.post(`${import.meta.env.VITE_URL}/food`, product)
                   .then(res => console.log(res.data))
+                  form.reset();
             
       }
 
