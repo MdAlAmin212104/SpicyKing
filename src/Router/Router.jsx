@@ -12,6 +12,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import DetailsCard from "../components/DetailsCard/DetailsCard";
 import axios from "axios";
 import Purchase from "../components/Purchase/Purchase";
+import UpdateProduct from "../components/UpdateProduct/UpdateProduct";
 
 const router = createBrowserRouter([
       {
@@ -53,6 +54,11 @@ const router = createBrowserRouter([
                         path: '/purchase/:id',
                         element: <Purchase />,
                         loader: ({ params }) => fetch(`${import.meta.env.VITE_URL}/purchase/${params.id}`)
+                  },
+                  {
+                        path: '/update/:id',
+                        element: <UpdateProduct />,
+                        loader: ({ params }) => fetch(`${import.meta.env.VITE_URL}/food/${params.id}`)
                   },
                   {
                         path: '/login',

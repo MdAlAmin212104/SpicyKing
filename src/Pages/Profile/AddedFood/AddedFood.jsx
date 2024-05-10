@@ -13,7 +13,7 @@ const AddedFood = () => {
                   setUserAdd(data)
             }
             getData()
-      }, [])
+      }, [user])
 
       console.log(userAdd);
       return (
