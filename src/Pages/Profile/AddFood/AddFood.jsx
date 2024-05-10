@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
+import axios from 'axios';
 
 const AddFood = () => {
 
@@ -20,8 +21,15 @@ const AddFood = () => {
             }
             const photo = form.photo.value
             const desc = form.desc.value
-            console.log({name, category, price, quantity, origin, buyer, photo, desc});
+            const product = { name, category, price, quantity, origin, buyer, photo, desc };
+
+            axios.post(`${import.meta.env.VITE_URL}/food`, product)
+                  .then(res => console.log(res.data))
+            
       }
+
+
+
       return (
             <div>
                   <Helmet>
@@ -33,7 +41,7 @@ const AddFood = () => {
 
 
 
-                  <form onSubmit={handleAddFood} className="card-body">
+                        <form onSubmit={handleAddFood} className="card-body">
                               <div className='grid md:grid-cols-2 gap-4'>
                                     <div className="form-control">
                                           <label className="label">
