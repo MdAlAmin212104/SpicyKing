@@ -1,11 +1,14 @@
 import React, { useContext } from 'react';
 import { FaFacebook } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import { Helmet } from 'react-helmet-async';
+import Swal from 'sweetalert2';
 
 const Login = () => {
       const { singInWithEmailPassword, googleLogin, facebookLogin, githubLogin, } = useContext(AuthContext)
+      const location = useLocation()
+      const navigate = useNavigate()
 
       const handleLogin = e => {
             e.preventDefault();
@@ -14,15 +17,25 @@ const Login = () => {
             const password = form.password.value;
             singInWithEmailPassword(email, password)
                   .then(res => {
-                        console.log(res.data);
+                        Swal.fire("User singIn success!");
+                        navigate(location.state || "/");
                   })
-                  .catch(err => console.error(err));
+                  .catch(err => {
+                        Swal.fire({
+                              title: "Auth Error?",
+                              text: err.message,
+                              icon: "question"
+
+                        });
+                        navigate( location.state || "/")
+                  });
       }
 
       const handleGoogleLogin = () => {
             googleLogin()
                   .then(res => {
-                        console.log(res.user)
+                        navigate(location?.state ? location.state : "/");
+                        Swal.fire("User Login success!");
                   })
                   
       }

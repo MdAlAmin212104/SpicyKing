@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import { Helmet } from 'react-helmet-async';
+import Swal from 'sweetalert2';
+import axios from 'axios';
 
 const Register = () => {
       const { singUpWithEmailPassword, updateUserProfile } = useContext(AuthContext)
@@ -12,15 +14,23 @@ const Register = () => {
             const email = form.email.value;
             const password = form.password.value;
             const photo = form.photo.value;
+
+            const userInfo = {
+                  name,
+                  email,
+                  photo,
+                  password,
+            }
             singUpWithEmailPassword(email, password)
                   .then(res => {
                         updateUserProfile(name, photo)
                               .then(res => {
-                                    //console.log('user profile update', res.data);
+                                    axios.post(`${import.meta.env.VITE_URL}/user`, userInfo)
+                                          .then(res => Swal.fire('user registration success'));
                               })
-                              .catch(err => console.error(err));
+                              .catch(err => Swal.fire("authentication error"));
                   })
-                  .catch(err => console.error(err));
+                  .catch(err => Swal.fire('authentication error'));
       }
 
 

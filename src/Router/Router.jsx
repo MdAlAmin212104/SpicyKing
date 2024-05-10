@@ -13,6 +13,7 @@ import DetailsCard from "../components/DetailsCard/DetailsCard";
 import axios from "axios";
 import Purchase from "../components/Purchase/Purchase";
 import UpdateProduct from "../components/UpdateProduct/UpdateProduct";
+import PrivateRoute from "../Private/PrivateRoute";
 
 const router = createBrowserRouter([
       {
@@ -34,30 +35,30 @@ const router = createBrowserRouter([
                   },
                   {
                         path: '/added-food',
-                        element: <AddedFood />
+                        element: <PrivateRoute><AddedFood /></PrivateRoute>
                         
                   },
                   {
                         path: '/add-food',
-                        element: <AddFood/>
+                        element: <PrivateRoute><AddFood/></PrivateRoute>
                   },
                   {     
                         path: '/order-food',
-                        element: <OrderFood/>
+                        element: <PrivateRoute><OrderFood/></PrivateRoute>
                   },
                   {
                         path: '/food/:id',
-                        element: <DetailsCard />,
+                        element: <PrivateRoute><DetailsCard /></PrivateRoute>,
                         loader: ({ params }) => fetch(`${import.meta.env.VITE_URL}/food/${params.id}`)
                   },
                   {
                         path: '/purchase/:id',
-                        element: <Purchase />,
+                        element: <PrivateRoute><Purchase /></PrivateRoute>,
                         loader: ({ params }) => fetch(`${import.meta.env.VITE_URL}/purchase/${params.id}`)
                   },
                   {
                         path: '/update/:id',
-                        element: <UpdateProduct />,
+                        element: <PrivateRoute><UpdateProduct /></PrivateRoute>,
                         loader: ({ params }) => fetch(`${import.meta.env.VITE_URL}/food/${params.id}`)
                   },
                   {
