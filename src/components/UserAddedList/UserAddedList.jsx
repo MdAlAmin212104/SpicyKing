@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const UserAddedList = ({ list }) => {
-      console.log(list);
       const { _id, photo, name, origin, price, quantity, buyer } = list;
 
 

@@ -12,12 +12,11 @@ const Register = () => {
             const email = form.email.value;
             const password = form.password.value;
             const photo = form.photo.value;
-            console.log(name, email, password, photo);
             singUpWithEmailPassword(email, password)
                   .then(res => {
                         updateUserProfile(name, photo)
                               .then(res => {
-                                    console.log('user profile update', res.data);
+                                    //console.log('user profile update', res.data);
                               })
                               .catch(err => console.error(err));
                   })

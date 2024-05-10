@@ -15,7 +15,6 @@ const AddedFood = () => {
             getData()
       }, [user])
 
-      console.log(userAdd);
       return (
             <div>
                   <Helmet>

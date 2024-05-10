@@ -7,7 +7,6 @@ import Swal from 'sweetalert2';
 const UpdateProduct = () => {
       const updateProduct = useLoaderData()
       const {user} = useContext(AuthContext)
-      console.log(updateProduct);
       const { _id, name, category, price, quantity, origin, buyer, photo, desc } = updateProduct;
 
       const handleUpdateProduct = (e) => {
@@ -22,13 +21,6 @@ const UpdateProduct = () => {
             const desc = form.desc.value;
             const UpdateProduct = { name, category, price, quantity, photo, desc, origin, }
             
-            console.log(updateProduct);
-
-            // axios.post(`${import.meta.env.VITE_URL}/update/${_id}`, updateProduct )
-            //       .then(res => console.log(res.data))
-
-            
-            
             
             fetch(`${import.meta.env.VITE_URL}/update/${_id}`, {
                   method: 'PATCH',
@@ -41,7 +33,6 @@ const UpdateProduct = () => {
                   .then(data => {
                         if (data.modifiedCount > 0) {
                               Swal.fire("this product database Update success!");
-                              console.log(data);
                         }
                        
                   })
