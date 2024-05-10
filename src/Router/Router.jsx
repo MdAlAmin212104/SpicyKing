@@ -29,11 +29,12 @@ const router = createBrowserRouter([
                   },
                   {
                         path: '/gallery',
-                        element: <Gallery/>
+                        element: <Gallery />,
                   },
                   {
                         path: '/added-food',
-                        element: <AddedFood/>
+                        element: <AddedFood />
+                        
                   },
                   {
                         path: '/add-food',

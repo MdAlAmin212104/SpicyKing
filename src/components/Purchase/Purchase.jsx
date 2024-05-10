@@ -4,7 +4,6 @@ import { useLoaderData } from 'react-router-dom';
 
 const Purchase = () => {
       const purchase = useLoaderData()
-      console.log(purchase);
       const { name, price, quantity, origin, buyer } = purchase;
       return (
             <form className="card-body">

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const HomeSingleCard = ({ card }) => {
-      console.log(card);
       const {_id, name, price, photo, category} = card;
       return (
             <div className="rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
