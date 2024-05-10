@@ -8,11 +8,13 @@ import AllFoods from "../Pages/AllFoods/AllFoods";
 import AddedFood from "../Pages/Profile/AddedFood/AddedFood";
 import AddFood from "../Pages/Profile/AddFood/AddFood";
 import OrderFood from "../Pages/Profile/OrderFood/OrderFood";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
       {
             path: '/',
             element: <Root />,
+            errorElement : <ErrorPage/>,
             children: [
                   {
                         path: '/',
