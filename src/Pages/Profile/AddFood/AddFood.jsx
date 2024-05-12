@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const AddFood = () => {
 
@@ -24,7 +25,7 @@ const AddFood = () => {
             const product = { name, category, price, quantity, origin, buyer, photo, desc };
 
             axios.post(`${import.meta.env.VITE_URL}/food`, product)
-                  .then(res => console.log(res.data))
+                  .then(res => Swal.fire('data added to database successfully'))
                   form.reset();
             
       }
