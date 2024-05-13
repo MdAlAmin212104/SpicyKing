@@ -8,7 +8,7 @@ const DisplayCard = () => {
 
       useEffect(() => {
             const getData = async () => {
-                  const { data } = await axios.get(`${import.meta.env.VITE_URL}/food?search=${search}`)
+                  const { data } = await axios.get(`${import.meta.env.VITE_URL}/food/search?search=${search}`)
                   setCardDisplay(data)
             }
             getData()
@@ -22,8 +22,6 @@ const DisplayCard = () => {
             const search = form.search.value;
             setSearch(search);
       }
-
-      console.log(search);
 
       return (
             <div className='mt-8'>

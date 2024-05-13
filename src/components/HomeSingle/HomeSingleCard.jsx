@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const HomeSingleCard = ({ card }) => {
-      const {_id, name, price, photo, category} = card;
+      const {_id, name, price, photo, quantity, category} = card;
       return (
             <div className="rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
                   <img src={photo} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
@@ -11,7 +11,8 @@ const HomeSingleCard = ({ card }) => {
                               <h2 className="text-3xl font-semibold tracking-wide">{name}</h2>
                               <div className='flex justify-between'>
                                     <p>Category : {category}</p>
-                                    <p>Price : ${ price }</p>
+                                    <p>Price : ${price}</p>
+                                    <p>Quantity: {quantity}</p>
                               </div>
                         </div>
                         <Link to={`/food/${_id}`} >
