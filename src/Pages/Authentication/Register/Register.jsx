@@ -29,7 +29,7 @@ const Register = () => {
                   .then(res => {
                         updateUserProfile(name, photo)
                               .then(res => {
-                                    axios.post(`${import.meta.env.VITE_URL}/user`, userInfo)
+                                    axios.post(`${import.meta.env.VITE_URL}/user`, userInfo, {withCredentials: true})
                                           .then(res => Swal.fire('user registration success'));
                                     navigate(location?.state ? location.state : "/");
                               })

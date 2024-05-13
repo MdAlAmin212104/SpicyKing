@@ -11,6 +11,7 @@ import {
 } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
 import auth from '../firebase/Firebase_config';
+import axios from 'axios';
 
 
 
@@ -57,7 +58,7 @@ const AuthProvider = ({ children }) => {
       }
       
 
-      const logOut = () => {
+      const logOut = async () => {
             setLoading(true);
             return signOut(auth)
       }
@@ -65,15 +66,31 @@ const AuthProvider = ({ children }) => {
 
       useEffect(() => {
             const unsubscribe = onAuthStateChanged(auth, currentUser => {
+                  const userEmail = currentUser?.email || user?.email;
+                  const loggedUser = { email: userEmail }
                   setLoading(false);
                   setUser(currentUser)
+                  if (currentUser) {
+                  axios.post(`${import.meta.env.VITE_URL}/jwt`, loggedUser, {withCredentials: true})
+                        .then(res => {
+                              //console.log('token added here', res.data);
+                        })
+                  }
+                  else {
+                        axios.post(`${import.meta.env.VITE_URL}/logout`, loggedUser, {withCredentials: true})
+                        .then(res => {
+                              //console.log(res.data);
+                        })
+                  }
             })
 
             return () => {
                   unsubscribe();
             }
       }, []);
-
+      if (loading) {
+            return <span className="loading loading-spinner loading-md"></span>
+      }
 
 
       const userInfo = {

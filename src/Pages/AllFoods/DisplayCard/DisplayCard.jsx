@@ -8,7 +8,7 @@ const DisplayCard = () => {
 
       useEffect(() => {
             const getData = async () => {
-                  const { data } = await axios.get(`${import.meta.env.VITE_URL}/food/search?search=${search}`)
+                  const { data } = await axios.get(`${import.meta.env.VITE_URL}/food/search?search=${search}`, {withCredentials : true})
                   setCardDisplay(data)
             }
             getData()

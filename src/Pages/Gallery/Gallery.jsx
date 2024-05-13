@@ -8,7 +8,7 @@ const Gallery = () => {
       const [photo, setPhoto] = useState([])
       useEffect(() => {
             const getData = async () => {
-                  const { data } = await axios.get(`${import.meta.env.VITE_URL}/images`)
+                  const { data } = await axios.get(`${import.meta.env.VITE_URL}/images`, {withCredentials: true})
                   setPhoto(data)
             }
             getData()

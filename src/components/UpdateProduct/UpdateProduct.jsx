@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { useLoaderData } from 'react-router-dom';
-import axios from 'axios';
 import Swal from 'sweetalert2';
 
 const UpdateProduct = () => {
@@ -27,7 +26,7 @@ const UpdateProduct = () => {
                   headers: {
                         "content-type": "application/json",
                   },
-                  body: JSON.stringify(UpdateProduct)
+                  body: JSON.stringify(UpdateProduct),
             })
                   .then(res => res.json())
                   .then(data => {

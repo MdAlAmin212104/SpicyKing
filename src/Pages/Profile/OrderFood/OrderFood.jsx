@@ -4,6 +4,7 @@ import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import axios from 'axios';
 import UserOrderList from '../../../components/UserOrderList/UserOrderList';
 import moment from 'moment';
+import Swal from 'sweetalert2';
 
 const OrderFood = () => {
       const { user } = useContext(AuthContext)
@@ -11,17 +12,49 @@ const OrderFood = () => {
 
       useEffect(() => {
             const getData = async () => {
-                  const { data } = await axios.get(`${import.meta.env.VITE_URL}/purchaseUserEmail/${user?.email}`)
+                  const { data } = await axios.get(`${import.meta.env.VITE_URL}/purchaseUserEmail/${user?.email}`, {withCredentials: true})
                   setOrder(data)
             }
             getData()
       }, [])
 
+      const handleDelate = (id) => {
+            Swal.fire({
+                  title: "Are you sure?",
+                  text: "You won't be able to revert this!",
+                  icon: "warning",
+                  showCancelButton: true,
+                  confirmButtonColor: "#3085d6",
+                  cancelButtonColor: "#d33",
+                  confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                  if (result.isConfirmed) {
+                        fetch(`${import.meta.env.VITE_URL}/purchase/delete/${id}`, {
+                              method: "DELETE",
+                        })
+                              .then(res => res.json())
+                              .then(data => {
+                                    if (data.deleteCount > 0) {
+                                         Swal.fire({
+                                                title: "Deleted!",
+                                                text: "Your file has been deleted.",
+                                                icon: "success"
+                                          }); 
+                                    }
+                                    const remaining = order.filter(order => order._id !== id);
+                                    setOrder(remaining);
+
+                              })
+                  }
+            });
+      }
+
+
 
       const totalQuantity = order.reduce((acc, obj) => acc + obj.quantity, 0);
 
       if (totalQuantity <= 0) {
-            return <p>Your purchase order is not find</p>
+            return <p>Your purchase order is not found</p>
       }
       else if (totalQuantity > 20) {
             return <p>Your can't purchase 20 more then product</p>
@@ -54,7 +87,11 @@ const OrderFood = () => {
                               </thead>
                               <tbody>
                                     {
-                                          order.map(list => <UserOrderList key={list._id} list={list} />)        
+                                                order.map(list => <UserOrderList
+                                                      key={list._id}
+                                                      list={list}
+                                                      handleDelate={handleDelate}
+                                                />)        
                                     }
                                     
                               </tbody>

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import axios from 'axios';
 
 const Navbar = () => {
       const {user, logOut} = useContext(AuthContext)
@@ -13,9 +14,10 @@ const Navbar = () => {
       </>
 
 
-      const handleLogOut = () => {
+      const handleLogOut =() => {
             logOut()
-                  .then(res => console.log(res.data))
+                  .then(res => {
+                  })
                   .catch(err => console.log(err.message));
       }
       return (

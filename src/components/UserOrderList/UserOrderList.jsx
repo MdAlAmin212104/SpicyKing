@@ -1,41 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 
-const UserAddedList = ({ list }) => {
+const UserAddedList = ({ list, handleDelate }) => {
       const { _id, name, origin, price, quantity } = list;
 
       
 
 
 
-      const handleDelate = (id) => {
-            Swal.fire({
-                  title: "Are you sure?",
-                  text: "You won't be able to revert this!",
-                  icon: "warning",
-                  showCancelButton: true,
-                  confirmButtonColor: "#3085d6",
-                  cancelButtonColor: "#d33",
-                  confirmButtonText: "Yes, delete it!"
-            }).then((result) => {
-                  if (result.isConfirmed) {
-                        fetch(`${import.meta.env.VITE_URL}/purchase/delete/${id}`, {
-                              method: "DELETE",
-                        })
-                              .then(res => res.json())
-                              .then(data => {
-                                    if (data.deleteCount > 0) {
-                                         Swal.fire({
-                                                title: "Deleted!",
-                                                text: "Your file has been deleted.",
-                                                icon: "success"
-                                          }); 
-                                    }
-
-                              })
-                  }
-            });
-      }
+      
 
 
       return (

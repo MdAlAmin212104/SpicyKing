@@ -21,9 +21,9 @@ const Purchase = () => {
             const purchase = {name, price, date, origin, buyer, userEmail, quantity}
 
             
-            axios.post(`${import.meta.env.VITE_URL}/purchase`, purchase)
+            axios.post(`${import.meta.env.VITE_URL}/purchase`, purchase, {withCredentials: true}) 
                   .then(res => {
-                        console.log(res.data);
+                        //console.log(res.data);
                         if (res.data.modifiedCount === 0) {
                               Swal.fire('data added to database successfully')
                         }
@@ -34,7 +34,7 @@ const Purchase = () => {
       }
 
       return (
-            <div className='flex justify-around '>
+            <div>
                   
                   <form onSubmit={handlePurchase} className="card-body">
                         <div className='grid md:grid-cols-2 gap-4'>
@@ -89,14 +89,7 @@ const Purchase = () => {
                                     
                   </form>
 
-                  <div className='mt-4 bg-slate-600 h-[300px] rounded-xl p-4 text-white'>
-                        <h3 className='text-4xl font-bold'>Order Summary</h3>
-                        <p className='mt-2 text-2xl'>Selected Item : 1</p>
-                        <p className='mt-2 text-2xl'>Price : 1</p>
-                        <p className='mt-2 text-xl'>Discount : 0</p>
-                        <p className='mt-2 text-2xl'>Total : 0</p>
-
-                  </div>
+                 
            </div>
       );
 };

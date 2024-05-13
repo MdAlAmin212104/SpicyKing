@@ -24,7 +24,7 @@ const AddFood = () => {
             const desc = form.desc.value
             const product = { name, category, price, quantity, origin, buyer, photo, desc };
 
-            axios.post(`${import.meta.env.VITE_URL}/food`, product)
+            axios.post(`${import.meta.env.VITE_URL}/food`, product, {withCredentials: true})
                   .then(res => Swal.fire('data added to database successfully'))
                   form.reset();
             

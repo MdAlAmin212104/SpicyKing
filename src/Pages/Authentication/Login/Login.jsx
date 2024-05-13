@@ -10,7 +10,6 @@ const Login = () => {
       const location = useLocation()
       const navigate = useNavigate()
       const from = location.state?.from?.pathname || "/";
-
       const handleLogin = e => {
             e.preventDefault();
             const form = e.target;
@@ -19,7 +18,9 @@ const Login = () => {
             
             singInWithEmailPassword(email, password)
                   .then(res => {
-                        Swal.fire("User singIn success!");
+                        const user = { email }
+                        //console.log(user);
+                        //Swal.fire("User singIn success!");
                         navigate(location?.state ? location.state : "/");
                   })
                   .catch(err => {
@@ -38,7 +39,6 @@ const Login = () => {
             googleLogin()
                   .then(res => {
                         navigate(location?.state ? location.state : "/");
-                        Swal.fire("User Login success!");
                   })
                   
       }
@@ -46,7 +46,7 @@ const Login = () => {
             facebookLogin()
                   .then(res => {
                         navigate(location?.state ? location.state : "/");
-                        Swal.fire("User Login success!");
+                        
                   })
                   
       }
@@ -54,7 +54,6 @@ const Login = () => {
             githubLogin()
                   .then(res => {
                         navigate(location?.state ? location.state : "/");
-                        Swal.fire("User Login success!");
                   })
                   
       }
