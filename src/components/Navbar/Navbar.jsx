@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
@@ -40,15 +40,14 @@ const Navbar = () => {
                   <div className="navbar-end">
                         {
                               user ? <>
-                                    <button onClick={handleLogOut} className='btn btn-primary'>Logout</button>
-                                          <span className='mr-4'></span>
+                                    <span className='mr-4'></span>
                                           <div className="dropdown dropdown-end group">
                                                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar focus:outline-none">
                                                       <div className="w-10 rounded-full">
                                                             <img className='' alt="Tailwind CSS Navbar component" src={ user?.photoURL || "https://lh3.googleusercontent.com/a/ACg8ocKfSrgZFBvoQ6s12ZB8gHSg3E625KGpnaiYthDiKIfNqh1g62wg=s96-c"} />
                                                       </div>
                                                 </div>
-                                                <ul className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52 invisible opacity-0 transition-opacity duration-200 group-hover:visible group-hover:opacity-100">
+                                                <ul className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-500 rounded-box w-52 invisible opacity-0 transition-opacity duration-200 group-hover:visible group-hover:opacity-100">
                                                       
                                                       <li>
                                                             <Link to='/added-food'>
@@ -61,6 +60,7 @@ const Navbar = () => {
                                                       <li>
                                                             <Link to='/order-food'>My ordered food</Link>
                                                       </li>
+                                                <button onClick={handleLogOut} className='btn btn-primary'>Logout</button>
                                                 </ul>
                                           </div>
                               </> :<button className='btn btn-primary text-xl'><Link to='/login'>Login</Link></button>

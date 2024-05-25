@@ -1,11 +1,9 @@
-import { Link } from "react-router-dom";
 
 import hero1 from "../../assets/image/Hero/pizzaImg.png";
 import man from "../../assets/image/Hero/deliveryman.png";
 import hero2 from "../../assets/image/Hero/burger2.png";
 import man3 from "../../assets/image/Hero/man3.png";
 import hero3 from "../../assets/image/Hero/img3.png";
-// import hero4 from "../../assets/image/hero4.jpg";
 const Hero = () => {
   return (
     <div className="carousel w-full">

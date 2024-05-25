@@ -1,8 +1,9 @@
-import React from 'react';
+
 import Hero from '../../components/Hero/Hero';
-import DiscountSection from '../../components/DiscountSection/DiscountSection';
 import { Helmet } from 'react-helmet-async';
 import HomeCard from '../../components/HomeCard/HomeCard';
+import Table from './HomeComponents/Table/Table';
+import Banner from './HomeComponents/Banner/Banner';
 
 const Home = () => {
       return (
@@ -11,7 +12,8 @@ const Home = () => {
                         <title>Spicy King || Home</title>
                   </Helmet>
                   <Hero />
-                  <DiscountSection />
+                  <Table/>
+                  <Banner/>
                   <HomeCard/>
             </div>
       );
