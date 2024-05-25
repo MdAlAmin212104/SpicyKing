@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
-import axios from 'axios';
 
 const Navbar = () => {
       const {user, logOut} = useContext(AuthContext)
@@ -16,12 +15,12 @@ const Navbar = () => {
 
       const handleLogOut =() => {
             logOut()
-                  .then(res => {
+                  .then(() => {
                   })
                   .catch(err => console.log(err.message));
       }
       return (
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-[#131313] text-white">
                   <div className="navbar-start">
                         <div className="dropdown">
                               <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
