@@ -5,6 +5,7 @@ import HomeCard from '../../components/HomeCard/HomeCard';
 import Table from './HomeComponents/Table/Table';
 import Banner from './HomeComponents/Banner/Banner';
 import SectionTitle from '../../Shared/SectionTitle/SectionTitle';
+import GallerySection from './HomeComponents/GallerySection/GallerySection';
 
 const Home = () => {
       return (
@@ -17,6 +18,7 @@ const Home = () => {
                   <Banner/>
                   <SectionTitle subHeading='Food Items' heading='Popular' colorHeading='Menu' />
                   <HomeCard/>
+                  <GallerySection/>
             </div>
       );
 };
