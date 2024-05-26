@@ -7,7 +7,7 @@ import { animation } from "../../../../utility/Animation";
 
 const DeliverySection = () => {
   return (
-    <div className="flex gap-4 bg-[#fff8ee] py-12 rounded-3xl">
+    <div className="lg:flex gap-4 bg-[#fff8ee] py-12 rounded-3xl">
       <motion.div
         variants={animation('right', 0.1)}
         initial = {'hidden'}
@@ -24,7 +24,7 @@ const DeliverySection = () => {
        className="ml-8">
         <h1 className="canvas text-[#c33] text-5xl my-4 font-bold">Delivery</h1>
         <h2 className="text-5xl font-bold">
-          A Moments Of Delivered <br />{" "}
+          A Moments Of Delivered <br />
           <span className="text-[#c33]">On Right Time & Place </span>
         </h2>
         <p className="mt-8">
@@ -40,7 +40,7 @@ const DeliverySection = () => {
             <p className="text-[#2a435d]">Delivery Order Num.</p>
             <p className="text-[#f93] text-2xl font-bold">123-456789062</p>
           </div>
-          <button className="capitalize btn text-white bg-red-600 border-none ml-8 text-xl font-semibold">
+          <button className="capitalize btn text-white bg-red-600 border-none lg:ml-8 text-xl font-semibold">
             Try it now
           </button>
         </div>

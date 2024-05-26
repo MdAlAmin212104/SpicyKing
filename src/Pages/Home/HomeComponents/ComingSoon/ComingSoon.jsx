@@ -8,8 +8,8 @@ const ComingSoon = () => {
     const time = new Date();
   time.setSeconds(time.getSeconds() + 600); // 10 minutes timer
   return (
-    <div className="flex my-8 bg-[#FFF8EE] gap-9">
-        <img src={comingSoon} alt="" className="w-2/4" />
+    <div className="lg:flex my-8 pl-4 bg-[#FFF8EE] gap-9">
+        <img src={comingSoon} alt="" className="lg:w-2/4" />
       <div className="text-left text-[#380B0B]">
         <motion.div
           variants={animation("down", 0.1)}
