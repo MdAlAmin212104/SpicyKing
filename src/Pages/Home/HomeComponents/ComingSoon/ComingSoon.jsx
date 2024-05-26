@@ -8,11 +8,9 @@ const ComingSoon = () => {
     const time = new Date();
   time.setSeconds(time.getSeconds() + 600); // 10 minutes timer
   return (
-    <div className="flex my-8 bg-black">
-      <div>
-        <img src={comingSoon} alt="" className="w-5/6" />
-      </div>
-      <div className="text-left text-white">
+    <div className="flex my-8 bg-[#FFF8EE] gap-9">
+        <img src={comingSoon} alt="" className="w-2/4" />
+      <div className="text-left text-[#380B0B]">
         <motion.div
           variants={animation("down", 0.1)}
           initial={"hidden"}
@@ -23,7 +21,7 @@ const ComingSoon = () => {
           <h5 className="text-[#c33] md:text-5xl text-2xl canvas font-bold">
           Coming Soon
           </h5>
-          <h2 className="md:text-5xl text-3xl font-black mt-5 text-white heading-16">
+          <h2 className="md:text-5xl text-3xl font-black mt-5 heading-16">
           Coming Soon SPICY CHICKEN PIZZA  <span className="text-[#c33]">Food</span>
           </h2>
         </motion.div>
