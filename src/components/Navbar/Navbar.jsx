@@ -47,18 +47,18 @@ const Navbar = () => {
                                                             <img className='' alt="Tailwind CSS Navbar component" src={ user?.photoURL || "https://lh3.googleusercontent.com/a/ACg8ocKfSrgZFBvoQ6s12ZB8gHSg3E625KGpnaiYthDiKIfNqh1g62wg=s96-c"} />
                                                       </div>
                                                 </div>
-                                                <ul className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-500 rounded-box w-52 invisible opacity-0 transition-opacity duration-200 group-hover:visible group-hover:opacity-100">
+                                                <ul className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-black rounded-box w-52 invisible opacity-0 transition-opacity duration-200 group-hover:visible group-hover:opacity-100">
                                                       
                                                       <li>
-                                                            <Link to='/added-food'>
+                                                            <NavLink to='/added-food'>
                                                                   My added food
-                                                            </Link>
+                                                            </NavLink>
                                                       </li>
                                                       <li>
-                                                            <Link to='/add-food'>Add a food</Link>
+                                                            <NavLink to='/add-food'>Add a food</NavLink>
                                                       </li>
                                                       <li>
-                                                            <Link to='/order-food'>My ordered food</Link>
+                                                            <NavLink to='/order-food'>My ordered food</NavLink>
                                                       </li>
                                                 <button onClick={handleLogOut} className='btn btn-primary'>Logout</button>
                                                 </ul>

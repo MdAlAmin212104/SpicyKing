@@ -8,17 +8,17 @@ const Hero = () => {
   return (
     <div className="carousel w-full">
       <div id="slide1" className="carousel-item relative w-full">
-        <div className="lg:flex justify-stretch gap-9 bg-[#131313] text-white p-6">
+        <div className="lg:flex justify-stretch gap-9 bg-[#FFF8EE] text-[#380B0B] p-6">
           <div className="w-full mt-8 lg:ml-12">
             <h1 className="lg:text-6xl md:text-4xl text-2xl font-black">
               ENJOY OUR <br /> DELICIOUS
               <span className="text-[#f93]">FOOD</span>
             </h1>
             <div className="my-12">
-              <button className="btn bg-transparent text-white border-dotted border-2 rounded-r-none border-r-0 lg:text-2xl font-bold p-2">
+              <button className="btn bg-transparent border-dotted border-2 rounded-r-none border-r-0 lg:text-2xl font-bold p-2">
                 Buy One. Get One
               </button>
-              <button className="btn bg-red-600 border-none rounded-none lg:text-3xl font-bold text-white">
+              <button className="btn bg-red-600 border-none rounded-none lg:text-3xl text-white font-bold ">
                 FREE ❯
               </button>
             </div>
@@ -31,7 +31,7 @@ const Hero = () => {
                 <p>Delivery Order Num.</p>
                 <p className="text-[#f93] text-2xl font-bold">123-456789062</p>
               </div>
-              <button className="capitalize btn bg-red-600 border-none ml-8 text-white text-xl font-semibold">
+              <button className="capitalize btn bg-red-600 text-white border-none ml-8 text-xl font-semibold">
                 Try it now
               </button>
             </div>
@@ -88,7 +88,7 @@ const Hero = () => {
         </div>
       </div>
       <div id="slide3" className="carousel-item relative w-full">
-      <div className="lg:flex justify-stretch gap-9 bg-[#fff8ee] text-white p-6">
+      <div className="lg:flex justify-stretch gap-9 bg-[#fff8ee]  p-6">
           <div className="w-full mt-8 lg:ml-12">
             <div className="flex text-[#063] gap-4 text-2xl font-black my-8">
                   <img src={man3} alt="" />
@@ -100,7 +100,7 @@ const Hero = () => {
             <h1 className="lg:text-5xl md:text-4xl text-2xl font-black text-[#2a435d]">
             SNACK TIME <br />HEALS <span className="text-[#063]"> ALL WOUNDS</span> </h1>
             <div className="flex gap-4 my-8">
-                  <button className="btn bg-[#063] text-2xl font-bold text-white">Order Now</button>
+                  <button className="btn bg-[#063] text-white text-2xl font-bold ">Order Now</button>
                   <h3 className="lg:text-2xl md:text-xl text-[#2a435d] font-bold">
                   Price : <span className=" text-4xl">$20.40</span>
                   </h3>
@@ -112,7 +112,7 @@ const Hero = () => {
                 <p className="text-[#2a435d]">Delivery Order Num.</p>
                 <p className="text-[#f93] text-2xl font-bold">123-456789062</p>
               </div>
-              <button className="capitalize btn bg-red-600 border-none ml-8 text-white text-xl font-semibold">
+              <button className="capitalize btn text-white bg-red-600 border-none ml-8 text-xl font-semibold">
                 Try it now
               </button>
             </div>

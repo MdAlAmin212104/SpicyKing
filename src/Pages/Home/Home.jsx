@@ -7,6 +7,7 @@ import Banner from './HomeComponents/Banner/Banner';
 import SectionTitle from '../../Shared/SectionTitle/SectionTitle';
 import GallerySection from './HomeComponents/GallerySection/GallerySection';
 import ComingSoon from './HomeComponents/ComingSoon/ComingSoon';
+import DeliverySection from './HomeComponents/DeliverySection/DeliverySection';
 
 const Home = () => {
       return (
@@ -21,6 +22,7 @@ const Home = () => {
                   <HomeCard/>
                   <GallerySection/>
                   <ComingSoon/>
+                  <DeliverySection/>
             </div>
       );
 };
