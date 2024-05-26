@@ -6,6 +6,7 @@ import Table from './HomeComponents/Table/Table';
 import Banner from './HomeComponents/Banner/Banner';
 import SectionTitle from '../../Shared/SectionTitle/SectionTitle';
 import GallerySection from './HomeComponents/GallerySection/GallerySection';
+import ComingSoon from './HomeComponents/ComingSoon/ComingSoon';
 
 const Home = () => {
       return (
@@ -19,6 +20,7 @@ const Home = () => {
                   <SectionTitle subHeading='Food Items' heading='Popular' colorHeading='Menu' />
                   <HomeCard/>
                   <GallerySection/>
+                  <ComingSoon/>
             </div>
       );
 };

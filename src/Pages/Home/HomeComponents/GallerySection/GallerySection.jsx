@@ -1,6 +1,5 @@
 import React from 'react';
 import gallery1 from '../../../../assets/image/gallery1.png';
-import gallery2 from '../../../../assets/image/gallery2.png';
 import gallery02 from '../../../../assets/image/gallery02.png';
 import gallery3 from '../../../../assets/image/gallery3.png';
 import gallery4 from '../../../../assets/image/gallery4.png';
