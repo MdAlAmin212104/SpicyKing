@@ -4,13 +4,21 @@ import banner3 from "../../../../assets/image/banner3.jpg";
 import banner4 from "../../../../assets/image/banner4.png";
 import cake from "../../../../assets/image/cake.png";
 import 'animate.css';
+import { motion } from "framer-motion"
 
 import CountUp from "react-countup";
+import { animation } from "../../../../utility/Animation";
 
 const Banner = () => {
   return (
     <div className="grid lg:grid-cols-2 h-[800px] md:h-[600px] px-4">
-      <div className="lg:grid grid-cols-2 gap-4 hidden relative animate__animated animate__backInRight" >
+      <motion.div 
+        variants={animation('right', 0.1)}
+        initial = {'hidden'}
+        whileInView={"show"}
+        viewport={{once: false, amount: 0.7}}
+
+       className="lg:grid grid-cols-2 gap-4 hidden relative" >
         <img src={banner1} alt="" className="absolute top-[150px] w-40" />
         <img src={banner2} alt="" className="absolute left-[180px] top-6" />
         <img src={banner3} alt="" className="absolute bottom-0" />
@@ -21,8 +29,12 @@ const Banner = () => {
           </span>
           <p className="text-white font-bold">Food Item</p>
         </div>
-      </div>
-      <div className="animate__animated animate__backInLeft">
+      </motion.div>
+      <motion.div
+      variants={animation('left', 0.1)}
+      initial = 'hidden'
+      whileInView={"show"}
+      viewport={{once: false, amount: 0.7}}>
         <h1 className="text-[#2a435d] text-5xl font-black">
           Fresh Taste At A Great Price, Only For
           <span className="text-[#c33]">
@@ -45,7 +57,7 @@ const Banner = () => {
           <p className="text-[#2a435d]">It is a long established fact that a reader BBQ food Chicken.</p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
