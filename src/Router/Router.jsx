@@ -13,6 +13,7 @@ import DetailsCard from "../components/DetailsCard/DetailsCard";
 import Purchase from "../components/Purchase/Purchase";
 import UpdateProduct from "../components/UpdateProduct/UpdateProduct";
 import PrivateRoute from "../Private/PrivateRoute";
+import About from "../Pages/AboutSection/About";
 
 const router = createBrowserRouter([
       {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
                   {     
                         path: '/order-food',
                         element: <PrivateRoute><OrderFood /></PrivateRoute> 
+                  },
+                  {
+                        path: '/about',
+                        element: <About/>
                   },
                   {
                         path: '/food/:id',
