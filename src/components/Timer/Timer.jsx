@@ -11,7 +11,7 @@ const Timer = ({ expiryTimestamp }) => {
     <div className="my-4">
       <div className="lg:text-6xl flex">
         <div className="">
-            {days}  <span className="text-[#c33] font-black ml-8">:</span>
+            {days}  <span className="text-[#c33] font-black">:</span>
             <h1 className="text-xl">Days</h1>
         </div>
         <div className="lg:mx-6">

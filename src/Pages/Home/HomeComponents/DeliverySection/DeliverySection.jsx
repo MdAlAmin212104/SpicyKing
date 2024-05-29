@@ -7,7 +7,7 @@ import { animation } from "../../../../utility/Animation";
 
 const DeliverySection = () => {
   return (
-    <div className="lg:flex gap-4 bg-[#fff8ee] py-12 rounded-3xl">
+    <div className="lg:flex gap-4  py-12 rounded-3xl">
       <motion.div
         variants={animation('right', 0.1)}
         initial = {'hidden'}
