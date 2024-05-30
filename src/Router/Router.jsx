@@ -14,6 +14,7 @@ import Purchase from "../components/Purchase/Purchase";
 import UpdateProduct from "../components/UpdateProduct/UpdateProduct";
 import PrivateRoute from "../Private/PrivateRoute";
 import About from "../Pages/AboutSection/About";
+import Contact from "../Pages/ContactPage/Contact";
 
 const router = createBrowserRouter([
       {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
                   {
                         path: '/about',
                         element: <About/>
+                  },
+                  {
+                        path: '/contact',
+                        element: <Contact/>
                   },
                   {
                         path: '/food/:id',
