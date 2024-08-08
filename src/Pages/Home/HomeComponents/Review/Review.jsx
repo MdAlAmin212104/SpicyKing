@@ -38,7 +38,7 @@ const Review = () => {
                             value={review.rating}
                             readOnly
                         />
-                            <p className='my-10'>{review.details}</p>
+                            <p className='my-10 dark:text-white'>{review.details}</p>
                             <h3 className='text-[#CD9003] font-medium text-3xl'>{review.name}</h3>
                         </div>
 

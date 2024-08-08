@@ -33,13 +33,13 @@ const ComingSoon = () => {
           <h5 className="text-[#c33] md:text-5xl text-2xl canvas font-bold">
           Coming Soon
           </h5>
-          <h2 className="md:text-5xl text-3xl font-black mt-5 heading-16">
+          <h2 className="md:text-5xl text-3xl font-black mt-5 heading-16 dark:text-white">
           Coming Soon SPICY CHICKEN PIZZA  <span className="text-[#c33]">Food</span>
           </h2>
         </motion.div>
-        <p className="text-2xl my-4">Feel Hunger! Order Your Favourite Food.</p>
+        <p className="text-2xl my-4 dark:text-white">Feel Hunger! Order Your Favourite Food.</p>
         <Timer expiryTimestamp={time}/>
-        <button className='bg-[#c33] font-bold btn border-none mt-10 text-white uppercase'>Order Now</button>
+        <button className='bg-[#c33] font-bold btn border-none mt-10  text-white uppercase'>Order Now</button>
       </motion.div>
     </div>
   );

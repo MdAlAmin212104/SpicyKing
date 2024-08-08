@@ -28,13 +28,13 @@ const AboutStory = () => {
         whileInView={"show"}
         viewport={{ once: false, amount: 0.7 }}
       >
-        <h1 className="text-[#2a435d] text-5xl font-black">
+        <h1 className="text-[#2a435d] text-5xl font-black dark:text-white">
           The Story About Food Khan, Only For
           <span className="text-[#c33]">
             Hungry <br /> People.
           </span>{" "}
         </h1>
-        <p className="text-[#2a435d] my-8">
+        <p className="text-[#2a435d] my-8 dark:text-white">
           Food is a restaurant, bar and coffee roastery located on a busy corner
           site in Farringdon's Exmouth Market. With glazed.
         </p>

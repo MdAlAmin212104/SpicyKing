@@ -8,7 +8,7 @@ const Timer = ({ expiryTimestamp }) => {
   });
 
   return (
-    <div className="my-4">
+    <div className="my-4 dark:text-white">
       <div className="lg:text-6xl flex">
         <div className="">
             {days}  <span className="text-[#c33] font-black">:</span>

@@ -25,9 +25,9 @@ const Photo = ({ photo }) => {
     <div>
       <div className="relative">
         <a className="absolute inset-0 z-10 bg-white text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300">
-          <h1 className='tracking-wider' > title</h1>
-          <p className="mx-auto">Description</p>
-          <button className="btn" onClick={openModal}>
+          <h1 className='tracking-wider dark:text-black'> title</h1>
+          <p className="mx-auto dark:text-black">Description</p>
+          <button className="btn dark:text-white" onClick={openModal}>
             Add feedback
           </button>
           {user && showModal && (

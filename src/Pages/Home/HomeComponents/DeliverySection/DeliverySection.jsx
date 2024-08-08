@@ -37,7 +37,7 @@ const DeliverySection = () => {
         <div className="lg:flex md:flex justify-start gap-4 my-12 space-y-4">
           <img src={man} alt="" className="-mt-4" />
           <div>
-            <p className="text-[#2a435d]">Delivery Order Num.</p>
+            <p className="text-[#2a435d] dark:text-white">Delivery Order Num.</p>
             <p className="text-[#f93] text-2xl font-bold">123-456789062</p>
           </div>
           <button className="capitalize btn text-white bg-red-600 border-none lg:ml-8 text-xl font-semibold">

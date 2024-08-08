@@ -35,13 +35,13 @@ const Banner = () => {
       initial = 'hidden'
       whileInView={"show"}
       viewport={{once: false, amount: 0.7}}>
-        <h1 className="text-[#2a435d] text-5xl font-black">
+        <h1 className="text-[#2a435d] dark:text-white text-5xl font-black">
           Fresh Taste At A Great Price, Only For
           <span className="text-[#c33]">
             Hungry <br /> People.
           </span>{" "}
         </h1>
-        <p className="text-[#2a435d] my-8">
+        <p className="text-[#2a435d] my-8 dark:text-white">
           Food is a restaurant, bar and coffee roastery located on a busy corner
           site in Farringdon`s Exmouth Market. With glazed.
         </p>
@@ -53,8 +53,8 @@ const Banner = () => {
             </div>
           </div>
           <div>
-          <h1 className="text-[#2a435d] text-2xl font-bold">Garlic Burger Parties</h1>
-          <p className="text-[#2a435d]">It is a long established fact that a reader BBQ food Chicken.</p>
+          <h1 className="text-[#2a435d] text-2xl font-bold dark:text-white">Garlic Burger Parties</h1>
+          <p className="text-[#2a435d] dark:text-white">It is a long established fact that a reader BBQ food Chicken.</p>
           </div>
         </div>
       </motion.div>
